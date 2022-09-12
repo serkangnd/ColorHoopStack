@@ -14,7 +14,8 @@ public class StandController : MonoBehaviour
     public List<GameObject> rings = new();
     //We create a gameManager for catching movements and rings places
     [SerializeField] private GameManager gameManager;
-
+    //When compeleteRingCount reach max ring count our stand will be close
+    [SerializeField] private int compeleteRingCount;
 
     //When player wants to move rings we need to take toppest ring
     public GameObject GetToppomRingOfPlatform()
@@ -51,6 +52,45 @@ public class StandController : MonoBehaviour
         {
             //ıf there is no rings on platform our empty socket place will be 0 automatically
             emptySocket = 0;
+        }
+    }
+
+    public void RingsColorControl()
+    {
+        //If our stand is full now we can check our rings are compelete
+        if (rings.Count == 4)
+        {
+            string refColor = rings[0].GetComponent<Ring>().ringColor;
+            foreach (var item in rings)
+            {
+                if (refColor == item.GetComponent<Ring>().ringColor)
+                {
+                    compeleteRingCount++;
+                }
+            }
+
+            if (compeleteRingCount == 4)
+            {
+                gameManager.PlatformCompleted();
+                ClosingFinishedPlatform();
+            }
+            else
+            {
+                compeleteRingCount = 0;
+            }
+        }
+    }
+
+    void ClosingFinishedPlatform()
+    {
+        foreach (var item in rings)
+        {
+            item.GetComponent<Ring>().isCanMove = false;
+            Color32 color = item.GetComponent<MeshRenderer>().material.GetColor("_Color");
+            color.a = 150;
+            item.GetComponent<MeshRenderer>().material.SetColor("_Color", color);
+            //We were finding our platforms with their tags. We are changing the tag so that no action is taken
+            gameObject.tag = "Untagged";
         }
     }
 }

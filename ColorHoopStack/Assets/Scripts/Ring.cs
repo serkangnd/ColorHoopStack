@@ -33,9 +33,8 @@ public class Ring : MonoBehaviour
                 movementPosition = movedObject;
                 isChangedRingPostion = true;
                 break;
-            case "InsertSocket":
-                break;
             case "BackToSocket":
+                backToSocket = true;
                 break;
         }
     }
@@ -79,6 +78,18 @@ public class Ring : MonoBehaviour
                 {
                     parentPlatform.GetComponent<StandController>().rings[^2].GetComponent<Ring>().isCanMove = false;
                 }
+                gameManager.isMoving = false;
+            }
+        }
+        if (backToSocket)
+        {
+            //Lerp to stand ring socket
+            transform.position = Vector3.Lerp(transform.position, parentRingSocket.transform.position, .1f);
+            if (Vector3.Distance(transform.position, parentRingSocket.transform.position) < .10)
+            {
+                //When it close enough to stang, it will take the socket position
+                transform.position = parentRingSocket.transform.position;
+                backToSocket = false;
                 gameManager.isMoving = false;
             }
         }
