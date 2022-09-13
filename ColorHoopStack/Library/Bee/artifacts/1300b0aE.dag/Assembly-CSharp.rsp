@@ -356,7 +356,9 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Ring.cs"
+"Assets/Scripts/SoundManager.cs"
 "Assets/Scripts/StandController.cs"
+"Assets/Scripts/UiManager.cs"
 -langversion:9.0
 
 /deterministic

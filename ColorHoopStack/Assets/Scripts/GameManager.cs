@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,10 +18,23 @@ public class GameManager : MonoBehaviour
     //Finished platforms
     //If compeletedPlatformCount equal to target we will finish the game or next level
     private int compeletedPlatformCount;
+
+    //SFX
+    [SerializeField] private AudioSource gameSoundTrack;
+    [SerializeField] private AudioSource backToSocketEffect;
+    [SerializeField] private AudioSource insertToSocketEffect;
+
+    //Level Index
+    [SerializeField] TextMeshProUGUI currentLevelText;
+    [SerializeField] private static int currentLevelIndex;
+    public GameObject nextLevelPanel;
     
     void Start()
     {
-        
+        gameSoundTrack.Play();
+        //Active scenes start from 0 so we need to add 1 
+        currentLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SetLevelTexts();
     }
 
     void Update()
@@ -60,6 +75,7 @@ public class GameManager : MonoBehaviour
                                 //After we adding rings to new platform, we cleaning our selected ring and platform
                                 selectedRing = null;
                                 selectedPlatform = null;
+                                insertToSocketEffect.Play();
                             }
                             else
                             {
@@ -67,6 +83,7 @@ public class GameManager : MonoBehaviour
                                 _ring.MoveRings("BackToSocket");
                                 selectedRing = null;
                                 selectedPlatform = null;
+                                backToSocketEffect.Play();
                             }
                         }
 
@@ -80,6 +97,7 @@ public class GameManager : MonoBehaviour
                             _standController.RingsColorControl();
                             selectedRing = null;
                             selectedPlatform = null;
+                            insertToSocketEffect.Play();
                         }
 
                         //If stand is full
@@ -88,6 +106,7 @@ public class GameManager : MonoBehaviour
                             _ring.MoveRings("BackToSocket");
                             selectedRing = null;
                             selectedPlatform = null;
+                            backToSocketEffect.Play();
                         }
                     }
 
@@ -97,6 +116,7 @@ public class GameManager : MonoBehaviour
                         _ring.MoveRings("BackToSocket");
                         selectedRing = null;
                         selectedPlatform = null;
+                        backToSocketEffect.Play();
                     }
 
                     //If there is no selected platform that code block will work
@@ -128,7 +148,13 @@ public class GameManager : MonoBehaviour
         compeletedPlatformCount++;
         if (compeletedPlatformCount == targetFinishPlatformCount)
         {
-            Debug.Log("wing game");
+            gameSoundTrack.Stop();
+            nextLevelPanel.SetActive(true);
         }
+    }
+
+    public void SetLevelTexts()
+    {
+        currentLevelText.text = "Level: " + currentLevelIndex.ToString();
     }
 }
