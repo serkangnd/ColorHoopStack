@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    private GameManager gameManager;
     private GameObject selectedRing;
     private GameObject selectedPlatform;
     private Ring _ring;
@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentLevelText;
     [SerializeField] private static int currentLevelIndex;
     public GameObject nextLevelPanel;
+
+    //tapTo play and game situation
+    public GameObject tapToPlay;
+    public bool isGameStart = false;
     
     void Start()
     {
@@ -39,8 +43,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!isGameStart)
         {
+            tapToPlay.SetActive(true);
+        }
+        else
+        {
+            tapToPlay.SetActive(false);
+        }
+        if (Input.GetMouseButtonDown(0) && Input.touchCount < 2)
+        {
+            isGameStart = true;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit,100))
             {
                 if(hit.collider != null && hit.collider.CompareTag("Stand"))
@@ -76,6 +89,13 @@ public class GameManager : MonoBehaviour
                                 selectedRing = null;
                                 selectedPlatform = null;
                                 insertToSocketEffect.Play();
+                            }
+                            else if (selectedRing != null && hit.collider.CompareTag("Untagged"))
+                            {
+                                _ring.MoveRings("BackToSocket");
+                                selectedRing = null;
+                                selectedPlatform = null;
+                                backToSocketEffect.Play();
                             }
                             else
                             {
@@ -138,6 +158,14 @@ public class GameManager : MonoBehaviour
                             selectedPlatform = _ring.parentPlatform;
                         }
                     }
+                }
+
+                if (selectedRing != null && hit.collider.CompareTag("Untagged"))
+                {
+                    _ring.MoveRings("BackToSocket");
+                    selectedRing = null;
+                    selectedPlatform = null;
+                    backToSocketEffect.Play();
                 }
             }
         }

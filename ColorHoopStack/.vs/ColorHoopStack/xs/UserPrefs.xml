@@ -1,16 +1,14 @@
 ﻿<Properties StartupConfiguration="{756EA1D1-A19C-64F9-79C5-608E25865674}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StandController.cs">
     <Files>
-      <File FileName="Assets/Scripts/StandController.cs" Line="78" Column="14" />
-      <File FileName="Assets/Scripts/Ring.cs" Line="32" Column="43" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="35" Column="58" />
-      <File FileName="Assets/Scripts/SoundManager.cs" Line="30" Column="20" />
-      <File FileName="Assets/Scripts/UiManager.cs" Line="25" Column="78" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/StandController.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/Ring.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="04758d34-693b-43c6-9752-6e5af368c1d8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d0434344-fdfc-46cd-ae11-ceaa04fbf0ae" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -45,7 +45,7 @@ public class Ring : MonoBehaviour
     {
         if (ringSelected)
         {
-            transform.position = Vector3.Lerp(transform.position, movementPosition.transform.position, .1f);
+            transform.position = Vector3.Lerp(transform.position, movementPosition.transform.position, .5f);
             if (Vector3.Distance(transform.position, movementPosition.transform.position) < .10)
             {
                 ringSelected = false;
@@ -54,7 +54,7 @@ public class Ring : MonoBehaviour
 
         if (isChangedRingPostion)
         {
-            transform.position = Vector3.Lerp(transform.position, movementPosition.transform.position, .1f);
+            transform.position = Vector3.Lerp(transform.position, movementPosition.transform.position, .5f);
             if (Vector3.Distance(transform.position, movementPosition.transform.position) < .10)
             {
                 isChangedRingPostion = false;
@@ -64,7 +64,7 @@ public class Ring : MonoBehaviour
         if (insertToSocket)
         {
             //Lerp to stand ring socket
-            transform.position = Vector3.Lerp(transform.position, parentRingSocket.transform.position, .1f);
+            transform.position = Vector3.Lerp(transform.position, parentRingSocket.transform.position, .5f);
             if (Vector3.Distance(transform.position, parentRingSocket.transform.position) < .10)
             {
                 //When it close enough to stang, it will take the socket position
@@ -84,7 +84,7 @@ public class Ring : MonoBehaviour
         if (backToSocket)
         {
             //Lerp to stand ring socket
-            transform.position = Vector3.Lerp(transform.position, parentRingSocket.transform.position, .1f);
+            transform.position = Vector3.Lerp(transform.position, parentRingSocket.transform.position, .5f);
             if (Vector3.Distance(transform.position, parentRingSocket.transform.position) < .10)
             {
                 //When it close enough to stang, it will take the socket position
