@@ -1,4 +1,4 @@
-#Thu Sep 15 19:54:02 EET 2022
+#Mon Sep 19 00:31:50 EET 2022
 base.0=/Users/serkan/Documents/GitHub/ColorHoopStack/ColorHoopStack/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/build/intermediates/dex/release/mergeDexRelease/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

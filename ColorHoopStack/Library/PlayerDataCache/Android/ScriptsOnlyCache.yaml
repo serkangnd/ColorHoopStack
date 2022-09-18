@@ -81,6 +81,27 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: UiManager
     methodName: CloseSettingsPanel
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: OnButtonPress
+  - assembly: Assembly-CSharp
+    fullTypeName: UiManager
+    methodName: ResetTheGame
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: ChangeVolume
+  - assembly: Assembly-CSharp
+    fullTypeName: UiManager
+    methodName: NextLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: SoundManager
+    methodName: OnButtonPress
+  - assembly: Assembly-CSharp
+    fullTypeName: UiManager
+    methodName: OpenSettingsPanel
+  - assembly: Assembly-CSharp
+    fullTypeName: UiManager
+    methodName: CloseSettingsPanel
   sceneClasses:
     Assets/Scenes/1.unity:
     - Class: 1
@@ -139,6 +160,83 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4246}
     - Class: 114
       Script: {instanceID: 4516}
+    - Class: 114
+      Script: {instanceID: 5018}
+    - Class: 114
+      Script: {instanceID: 5194}
+    - Class: 114
+      Script: {instanceID: 5284}
+    - Class: 114
+      Script: {instanceID: 5898}
+    - Class: 114
+      Script: {instanceID: 6050}
+    - Class: 114
+      Script: {instanceID: 6394}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1588}
+    - Class: 114
+      Script: {instanceID: 1912}
+    - Class: 114
+      Script: {instanceID: 2646}
+    - Class: 114
+      Script: {instanceID: 2872}
+    - Class: 114
+      Script: {instanceID: 3174}
+    - Class: 114
+      Script: {instanceID: 3382}
+    - Class: 114
+      Script: {instanceID: 3618}
+    - Class: 114
+      Script: {instanceID: 4244}
     - Class: 114
       Script: {instanceID: 5018}
     - Class: 114
@@ -975,4 +1073,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/1.unity
+  - Assets/Scenes/2.unity
   playerPath: /Users/serkan/Documents/GitHub/ColorHoopStack/ColorHoopStack/ColorHoopv2.apk
